@@ -1,0 +1,71 @@
+﻿<Window x:Class="Avaliacao.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="EcoExpress - Simulador de Frete" Height="500" Width="750"
+        Background="#F4F7F6" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.2*" />
+            <ColumnDefinition Width="0.8*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="0,0,15,0">
+            <TextBlock Text="EcoExpress Logística" FontSize="24" FontWeight="Bold" Foreground="#2E5A44"
+                       Margin="0,0,0,5" />
+            <TextBlock Text="Painel de Simulação de Frete Sustentável" FontSize="12" Foreground="#7F8C8D"
+                       Margin="0,0,0,20" />
+
+            <TextBlock Text="Distância da Entrega (em Km):" FontWeight="SemiBold" Margin="0,0,0,5" />
+            <TextBox x:Name="txtDistancia" Padding="8" Margin="0,0,0,15" Background="White" BorderBrush="#BDC3C7" />
+
+            <TextBlock Text="Peso da Carga (em Kg):" FontWeight="SemiBold" Margin="0,0,0,5" />
+            <TextBox x:Name="txtPeso" Padding="8" Margin="0,0,0,15" Background="White" BorderBrush="#BDC3C7" />
+
+            <TextBlock Text="Veículo de Transporte:" FontWeight="SemiBold" Margin="0,0,0,5" />
+            <ComboBox x:Name="cmbVeiculo" Padding="8" Margin="0,0,0,15" SelectedIndex="0">
+                <ComboBoxItem Content="Triciclo Elétrico (Eco)" />
+                <ComboBoxItem Content="Van Elétrica" />
+                <ComboBoxItem Content="Caminhão a Hidrogênio" />
+            </ComboBox>
+
+            <CheckBox x:Name="chkCupom" Content="Aplicar Cupom de Desconto (10%)" Margin="0,5,0,20"
+                      FontWeight="SemiBold" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnCalcular" Content="Calcular Frete" Grid.Column="0" Margin="0,0,5,0" Padding="10"
+                        Background="#2E5A44" Foreground="White" FontWeight="Bold" Cursor="Hand" />
+                <Button x:Name="btnFinalizar" Content="Finalizar Pedido" Grid.Column="1" Margin="5,0,0,0" Padding="10"
+                        Background="#27AE60" Foreground="White" FontWeight="Bold" Cursor="Hand" IsEnabled="False" />
+            </Grid>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Margin="15,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="#E8F4F0" Padding="15" CornerRadius="5" Margin="0,0,0,15"
+                    BorderBrush="#2E5A44" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="VALOR TOTAL DO FRETE" FontSize="11" HorizontalAlignment="Center" FontWeight="Bold"
+                               Foreground="#7F8C8D" />
+                    <TextBlock x:Name="lblValorTotal" Text="R$ 0,00" FontSize="32" HorizontalAlignment="Center"
+                               FontWeight="Black" Foreground="#2E5A44" Margin="0,5,0,0" />
+                </StackPanel>
+            </Border>
+
+            <DockPanel Grid.Row="1">
+                <TextBlock Text="Pedidos Finalizados:" DockPanel.Dock="Top" FontWeight="SemiBold" Margin="0,0,0,5" />
+                <ListBox x:Name="lstHistorico" Background="White" BorderBrush="#BDC3C7" />
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>
