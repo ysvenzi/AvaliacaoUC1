@@ -40,9 +40,9 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button x:Name="btnCalcular" Content="Calcular Frete" Grid.Column="0" Margin="0,0,5,0" Padding="10"
-                        Background="#2E5A44" Foreground="White" FontWeight="Bold" Cursor="Hand" />
+                        Background="#2E5A44" Foreground="White" FontWeight="Bold" Cursor="Hand" Click="BtnCalcular_OnClick"/>
                 <Button x:Name="btnFinalizar" Content="Finalizar Pedido" Grid.Column="1" Margin="5,0,0,0" Padding="10"
-                        Background="#27AE60" Foreground="White" FontWeight="Bold" Cursor="Hand" IsEnabled="False" />
+                        Background="#27AE60" Foreground="White" FontWeight="Bold" Cursor="Hand" Click="BtnFinalizar_OnClick" IsEnabled="False"/>
             </Grid>
         </StackPanel>
 
