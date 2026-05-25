@@ -67,7 +67,6 @@ public partial class MainWindow : Window
         veiculoEscolhido = veiculoSelecionado;
 
         //Desconto de Cupom: Se a caixinha chkCupom estiver marcada (IsChecked == true), aplique um desconto de 10% sobre o valor final acumulado.
-        double descontoCupom;
         if (chkCupom.IsChecked == true)
         {
             freteTotal = freteTotal * 0.90;
